@@ -1,17 +1,16 @@
-const adminModel = require("../Models/admin");
+const userModel = require("../Models/user");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 require("dotenv").config();
 
-//admin register function
-const adminRegister = async (req, res) => {
-  adminModel
+const userRegister = async (req, res) => {
+  userModel
     .findOne({ username: req.body.username })
     .then((user) => {
       if (!user) {
         //hashing the password
         let hashedPassword = bcrypt.hashSync(req.body.password, 8);
-        adminModel
+        userModel
           .create({
             id: req.body.id,
             username: req.body.username,
@@ -33,7 +32,7 @@ const adminRegister = async (req, res) => {
             }
           });
       } else {
-        return res.status(500).send({ msg: "Already available admin!" });
+        return res.status(500).send({ msg: "Already available user!" });
       }
     })
     .catch((err) => {
@@ -42,9 +41,8 @@ const adminRegister = async (req, res) => {
     });
 };
 
-//admin login function
-const adminLogin = async (req, res) => {
-  adminModel.findOne({ username: req.body.username }).then((user) => {
+const userLogin = async (req, res) => {
+  userModel.findOne({ username: req.body.username }).then((user) => {
     if (user) {
       //Comparing password is correct or not
       let passwordIsValid = bcrypt.compareSync(
@@ -65,6 +63,6 @@ const adminLogin = async (req, res) => {
 };
 
 module.exports = {
-  adminRegister,
-  adminLogin,
+  userRegister,
+  userLogin,
 };
