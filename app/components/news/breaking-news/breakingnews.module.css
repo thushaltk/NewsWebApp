@@ -5,8 +5,9 @@
 }
 
 #breakingnews {
-  transform: translateX(100%);
-  animation: movingText 15s linear infinite;
+  width: 100%;
+  justify-content: right;
+  animation: movingText 20s linear infinite;
 }
 
 @keyframes blinkAnim {
