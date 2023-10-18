@@ -1,0 +1,34 @@
+#breakingnewsheading {
+  opacity: 1;
+  z-index: 2;
+  animation: blinkAnim 0.2s infinite;
+}
+
+#breakingnews {
+  transform: translateX(100%);
+  animation: movingText 15s linear infinite;
+}
+
+@keyframes blinkAnim {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes movingText {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
