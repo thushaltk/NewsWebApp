@@ -42,59 +42,45 @@ const getAllNews = async (req, res) => {
       } else {
         return res
           .status(500)
-          .send({ success: false, msg: "News not retreived!.", data: data });
+          .send({ success: false, msg: "News not retreived!." });
       }
     })
     .catch((err) => {
       return res
         .status(500)
-        .send({ success: false, msg: "Server error occured!", data: data });
+        .send({ success: false, msg: "Server error occured!", err: err });
     });
 };
 
 const updateNews = async (req, res) => {
   newsModel
     .findByIdAndUpdate(req.params.id, req.body)
-    .then((data) => {
-      if (data) {
-        return res.status(200).send({
-          success: true,
-          msg: "News updated successfully.",
-          data: data,
-        });
-      } else {
-        return res
-          .status(500)
-          .send({ success: false, msg: "News not updated!.", data: data });
-      }
+    .then(() => {
+      return res.status(200).send({
+        success: true,
+        msg: "News updated successfully.",
+      });
     })
     .catch((err) => {
       return res
         .status(500)
-        .send({ success: false, msg: "Server error occured!", data: data });
+        .send({ success: false, msg: "Server error occured!", err: err });
     });
 };
 
 const deleteNews = async (req, res) => {
   newsModel
     .findByIdAndRemove(req.params.id)
-    .then((data) => {
-      if (data) {
-        return res.status(200).send({
-          success: true,
-          msg: "News Deleted Successfully",
-          data: data,
-        });
-      } else {
-        return res
-          .status(500)
-          .send({ success: false, msg: "News not deleted!.", data: data });
-      }
+    .then(() => {
+      return res.status(200).send({
+        success: true,
+        msg: "News Deleted Successfully",
+      });
     })
     .catch((err) => {
       return res
         .status(500)
-        .send({ success: false, msg: "Server error occured!", data: data });
+        .send({ success: false, msg: "Server error occured!", err: err });
     });
 };
 
