@@ -1,0 +1,13 @@
+#readMoreBtn:hover {
+  border-color: rgb(185 28 28);
+  background-color: rgb(185 28 28);
+  color: white;
+}
+
+#summaryText {
+  overflow: hidden;
+  font-size: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

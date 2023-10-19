@@ -1,0 +1,31 @@
+#userLoginDiv:hover #userIcon {
+  color: white;
+  cursor: pointer;
+}
+
+#userLoginDiv:hover #userLoginText {
+  color: white;
+  cursor: pointer;
+}
+
+#userLoginDiv:hover {
+  background-color: rgb(185 28 28);
+  color: white;
+  cursor: pointer;
+}
+
+#adminLoginDiv:hover #adminIcon {
+  color: white;
+  cursor: pointer;
+}
+
+#adminLoginDiv:hover #adminLoginText {
+  color: white;
+  cursor: pointer;
+}
+
+#adminLoginDiv:hover {
+  background-color: rgb(185 28 28);
+  color: white;
+  cursor: pointer;
+}

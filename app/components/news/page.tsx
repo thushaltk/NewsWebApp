@@ -23,7 +23,7 @@ export default function News(props: any) {
       </div>
       <div
         className="flex justify-center items-center bg-green-700"
-        style={{ width: "40%", height: "100%" }}
+        style={{ width: "40%", height: "100vh" }}
       >
         <p>foreign news section</p>
       </div>
