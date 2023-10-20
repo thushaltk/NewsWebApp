@@ -35,7 +35,7 @@ export default function AccountPopOver(props: any) {
       }}
     >
       <Link
-        href="/components/account"
+        href="/components/account/user"
         id={styles.userLoginDiv}
         className="flex justify-center items-center p-2 text-center"
       >
@@ -53,7 +53,8 @@ export default function AccountPopOver(props: any) {
           User Login
         </Typography>
       </Link>
-      <div
+      <Link
+        href="/components/account/admin"
         id={styles.adminLoginDiv}
         className="flex justify-center items-center p-2 text-center"
       >
@@ -70,7 +71,7 @@ export default function AccountPopOver(props: any) {
         >
           Admin Login
         </Typography>
-      </div>
+      </Link>
     </Popover>
   );
 }
