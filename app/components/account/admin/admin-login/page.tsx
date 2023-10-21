@@ -1,6 +1,7 @@
 import { Button, Card, Typography } from "@mui/material";
 import * as React from "react";
 import TextField from "@mui/material/TextField";
+import Link from "next/link";
 
 export default function AdminLogin(props: any) {
   return (
@@ -37,9 +38,11 @@ export default function AdminLogin(props: any) {
           label="Enter password"
           variant="outlined"
         />
-        <Button className="bg-red-700" variant="contained" style={{}}>
-          Login
-        </Button>
+        <Link href="/components/account/admin/admin-dashboard">
+          <Button className="bg-red-700" variant="contained">
+            Login
+          </Button>
+        </Link>
       </div>
     </Card>
   );
